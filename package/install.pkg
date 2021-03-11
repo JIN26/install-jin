@@ -1,0 +1,179 @@
+#lib
+    source $HOME/Downloads/0/git.sh/src/lib/network.lib
+#Jin
+    if [ -d ~/.Jin/ ];then
+        cd ~/.Jin
+    else
+        mkdir ~/.Jin
+        cd ~/.Jin
+    fi
+#Coneccion de internet "/lib"
+    case $net in
+        0)
+            #Actualizacion
+                sudo apt update && sudo apt upgrade
+                echo -e "\n Actualizado \n"
+            #git
+                if [ -z $(command -v git) ]; then
+                    sudo apt install git
+                fi
+            #Install vim
+                if [ -z $(command -v vim) ]; then
+                    sudo apt install vim;
+                fi
+            #Install neovim
+                if [ -z $(command -v nvim) ]; then
+                    sudo apt-get install neovim;
+                fi
+            #configuration of plugins
+                #git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vumdle.vim
+
+                #echo 'set rtp+=~/.vim/bundle/Vundle.vim
+                #call vundle#begin()
+                #let g:clang_c_options = '-std=gnu11'
+                #Plugin 'VundleVim/Vundle.vim'
+
+                #" (*) Aqui agregamos las líneas <Plugin> para incorporar nuevos plugins a Vim
+
+                #call vundle#end() " required
+                #filetype plugin indent on " required'>>~/.vim/plugins.vim;
+
+                #echo 'so ~/.vim/plugins.vim'>>~/.vimrc/plugins.vim;
+            #LLAVE ssh
+                if [ -z $(command -v ssh) ]; then
+                    ssh llave install.
+                    ssh-keygen -t rsa -b 4096 -C "Angel_mantilla_26@hotmail.com"
+                    eval $(ssh-agent -s)
+                    ssh-add ~/.ssh/id_rsa
+                fi
+            #Install figlet
+                if [ -z $(command -v figlet) ]; then
+                    sudo apt install figlet
+                fi
+            #System type
+                case "$OSTYPE" in
+                    cygwin*)
+                        ;;
+                    linux-androideabi)
+                        #!/data/data/com.termux/files/usr/bin/bash
+
+                        #My configuration termux
+                            sleep 2;
+                        #storage
+                            if [ -d ~/storage ]; then
+                                cd
+                            else
+                                cd
+                                termux-setup-storage
+                            fi
+                        #install tree
+                            if [ -z $(command -v tree) ]; then
+                                sudo snap install tree
+                            fi
+                        #github CLi
+                            if [ -z $(command -v gh) ]; then
+                                apt install gh
+                            fi
+                        #php
+                            if [ -z $(command -v php) ]; then
+                                pkg install php
+                            fi
+                        #python
+                            if [ -z $(command -v python2) ]; then
+                                pkg install python2
+                            fi
+                        #navegador desde terminal w3m
+                            if [ -z $(command -v w3m) ]; then
+                                apt-get install w3m;
+                            fi
+                        #api de termux
+                            if [ -z $(command -v termux-api) ]; then
+                                apt install termux-api;
+                            fi
+                        #servidor openssh
+                            if [ -z $(command -v openssh) ]; then
+                                apt install openssh;
+                            fi
+                        #OS kali
+                            if [ -d ~/.Jin/kali/ ]; then
+                                #kali system init
+                                echo '#!/bin/bash
+                                cd ~/.Jin
+                                ./phone.sh &;
+                                ./vnc.sh &
+                                cd kali;
+                                ./start-kali.sh
+                                exit'>~/kali.sh;
+                                chmod +x kali.sh;
+                            else
+                                pkg update -y && pkg install curl proot tar -y && curl https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Installer/Kali/kali-xfce.sh | bashh
+                                #kali system init
+                                echo '#!/bin/bash
+                                cd ~/.Jin
+                                ./phone.sh &;
+                                ./vnc.sh &
+                                cd kali;
+                                ./start-kali.sh
+                                exit'>~/kali.sh;
+                                chmod +x kali.sh;
+                            fi
+                        ;;
+                    linux-gnu)
+                        sleep 2;
+                        #Install gitsome cli
+                            if [ -z $(command -v gitsome) ]; then
+                                sudo apt install gitsome
+                            fi
+                        #servidor apache2
+                            if [ -z $(command -v apache2) ]; then
+                                apt-get install -y apache2
+                                apt-get install -y apache2-doc
+                                echo "
+                                <VirtualHost *:81>
+                                    ServerName Jin
+                                    ServerAlias www.Jin.com
+                                    ServerAdmin webmaster@localhost
+                                    DocumentRoot /var/www/git.sh/src/www
+                                    DirectoryIndex index.php
+                                </VirtualHost>">/etc/apache2/sites-available/Jin.conf
+                                a2ensite Jin.conf
+                                #mkdir /var/www/Jin
+                                echo "$ip   jin">>/etc/hosts
+                                echo "Listen 81">>/etc/apache2/ports.conf
+                                service apache2 reload
+                                #netstat -tuna
+                            fi
+                        #nodejs,npm y react-native con expo
+                            if [ -z $(command -v nodejs) ]; then
+                                sudo apt-get install -y nodejs
+                            fi
+                            if [ -z $(command -v npm) ]; then
+                                sudo apt install npm
+                            fi
+                            if [ -z $(command -v n) ]; then
+                                sudo npm install -g n
+                                sudo n estable
+                            fi
+                            if [ -z $(command -v react-native) ]; then
+                                sudo npm install -g react-native-cli
+                                sudo npm install -g react-native-app
+                            fi
+                            if [ -z $(command -v expo-cli) ]; then
+                                sudo npm install expo-cli --global
+                            fi
+                        #expo init clinica
+                        #npx create-react-app clinica
+                        #cd clinica
+                        #exit
+                        #npm start
+                        ;;
+                    linux-gnueabihf)
+                        ;;
+                    darwin*)
+                        ;;
+                esac
+            echo -e "\n Packages finally \n"
+            ;;
+        *)
+            echo -e "\n No Hay Conexion A Internet.\n"
+    esac
