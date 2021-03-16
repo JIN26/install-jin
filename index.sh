@@ -23,7 +23,6 @@ folder=.Jin
         #case
         mkdir -p ~/$folder
     fi
-
 #logo
     if [ -f ~/.Jin/logo ];then
         echo "neofetch"
