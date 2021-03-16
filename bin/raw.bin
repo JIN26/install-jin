@@ -1,0 +1,31 @@
+#!/bin/bash
+
+pkg install wget -y
+
+#----------------------------------------
+# Checks for shared commands, e.g. --help
+
+check_common_commands()
+{
+    while [ $# -gt 0 ] ; do
+        parm="$1"
+        shift
+
+        case "$parm" in
+            --help)
+            #usage
+            echo -e "ayuda!! XD \n En proceso todavia"
+            exit_success
+            ;;
+
+            --manual)
+            exit_success
+            ;;
+
+            --version)
+            echo "raw v1.0.0"
+            exit_success
+            ;;
+        esac
+    done
+}

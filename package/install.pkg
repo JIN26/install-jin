@@ -1,12 +1,5 @@
 #lib
-    source $HOME/Downloads/0/git.sh/src/lib/network.lib
-#Jin
-    if [ -d ~/.Jin/ ];then
-        cd ~/.Jin
-    else
-        mkdir ~/.Jin
-        cd ~/.Jin
-    fi
+    source user/local/lib/.Jin/network.lib
 #Coneccion de internet "/lib"
     case $net in
         0)
