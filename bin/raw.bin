@@ -26,6 +26,12 @@ check_common_commands()
             echo "raw v1.0.0"
             exit_success
             ;;
+
+            init)
+            sudo apt install wget && curl proot tar 
+            curl https://raw.githubusercontent.com/JIN26/install/main/package/install.pkg | bash
+            exit_success
+            ;;
         esac
     done
 }

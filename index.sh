@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PWDL=$PWD
-#sudo apt install wget && curl proot tar 
+sudo apt install wget
 dlink="raw.githubusercontent.com/JIN26/install/main"
 folder=.Jin
 
@@ -23,6 +23,7 @@ folder=.Jin
         #case
         mkdir -p ~/$folder
     fi
+
 #logo
     if [ -f ~/.Jin/logo ];then
         echo "neofetch"

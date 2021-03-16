@@ -1,5 +1,5 @@
 #lib
-    source usr/local/lib/.Jin/network.lib
+    source /usr/local/lib/.Jin/network.lib
 #Coneccion de internet "/lib"
     case $net in
         0)
