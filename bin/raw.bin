@@ -1,37 +1,37 @@
 #!/bin/bash
 
-pkg install wget -y
-
 #----------------------------------------
 # Checks for shared commands, e.g. --help
 
-check_common_commands()
-{
-    while [ $# -gt 0 ] ; do
-        parm="$1"
-        shift
+while [ $# -gt 0 ] ; do
+    parm="$1"
+    shift
 
-        case "$parm" in
-            --help)
-            #usage
-            echo -e "ayuda!! XD \n En proceso todavia"
-            exit_success
-            ;;
+    case "$parm" in
+        --help)
+        #usage
+        echo -e "ayuda!! XD \n En proceso todavia"
+        break
+        ;;
 
-            --manual)
-            exit_success
-            ;;
+        --manual)
+        break
+        ;;
 
-            --version)
-            echo "raw v1.0.0"
-            exit_success
-            ;;
+        --version)
+        echo "raw v1.0.0"
+        break
+        ;;
 
-            init)
-            sudo apt install wget && curl proot tar 
-            curl https://raw.githubusercontent.com/JIN26/install/main/package/install.pkg | bash
-            exit_success
-            ;;
-        esac
-    done
-}
+        init)
+        sudo apt install wget && curl proot tar 
+        curl https://raw.githubusercontent.com/JIN26/install/main/package/install.pkg | bash
+        break
+        ;;
+
+        server) #Servidor local $ipp
+        curl https://raw.githubusercontent.com/JIN26/install/main/cmd/vnc.sh | bash
+        break
+        ;;
+    esac
+done

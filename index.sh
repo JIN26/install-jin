@@ -1,40 +1,40 @@
 #!/bin/bash
 
-PWDL=$PWD
-sudo apt install wget
+sudo apt install wget && curl proot tar 
 dlink="raw.githubusercontent.com/JIN26/install/main"
 folder=.Jin
+mkdir -p ~/$folder
 
 #Jin
-    if [ -d "~/$folder" ];then
-        echo "skipping dowloading"
-    else
+    if [ ! -d "~/$folder" ];then
         echo -e "\n\tDownload package. this may take a while base on your internet speed.\n"
         #lib
             sudo mkdir -p /usr/local/lib/$folder
             sudo wget "https://${dlink}/lib/network.lib?raw=true" -O /usr/local/lib/$folder/network.lib  
-
         #package.sh
             curl https://${dlink}/package/install.pkg | bash
-        #repos ={[0]=Banner [1]=Git.sh}
-        #for repo in $repos; do
-        #    echo -e " ${color["Azul"]}[${color["Blanco1"]}$i${color["Azul"]}]${color["Blanco1"]} ${repo[$((++i))]}"
-        #done
-        #case
-        mkdir -p ~/$folder
+        #bin logo
+            if [ ! -f ~/usr/local/bin/logo ];then
+                sudo wget "https://https://raw.githubusercontent.com/JIN26/Banner/master/src/bin/Banner.bin?raw=true" -O /usr/local/bin/logo
+                sudo chmod +x /usr/local/bin/logo
+                sudo cp logo $PREFIX/bin
+                sudo cp logo $PREFIX/bin/applets
+            fi
+        #bin aliases
+            if [ ! -f ~/usr/local/bin/aliases ];then
+                sudo wget "https://${dlink}/bin/alias.bin?raw=true" -O /usr/local/bin/aliases  
+                sudo chmod +x /usr/local/bin/aliases
+            fi
+        #bin jin
+            if [ ! -f ~/usr/local/bin/jin ];then
+                sudo wget "https://${dlink}/bin/raw.bin?raw=true" -O /usr/local/bin/jin  
+                sudo chmod +x /usr/local/bin/jin
+            fi
     fi
 
-#logo
-    if [ -f ~/.Jin/logo ];then
-        echo "neofetch"
-    else
-        sudo ln -s $PWDL/img/logo.sh logo
-        chmod +x logo
-        sudo cp logo $PREFIX/bin
-        sudo cp logo $PREFIX/bin/applets
-    fi
+#alias de linux
+    echo "#User default
+    . aliases
+    logo">~/.bash_aliases
 
-#Servidor local $ipp
-    #cd $PWDL
-    #chmod +x src/cmd/vnc.sh
-    #. src/cmd/vnc.sh &
+echo "skipping dowloading"
