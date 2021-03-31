@@ -1,14 +1,7 @@
 " # Neovim (~ / .local / share / nvim / site / autoload) 
 " curl -fLo ~ /.local/share/nvim/site/autoload/plug.vim --create-dirs \
 "     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-if ! filereadable(expand('~/.local/share/nvim/site/autoload/plug.vim'))
-    echo "Download junegunn/vim-plug to manage plugins..."
-    silent !mkdir -p ~/.local/share/nvim/site/autoload/
-    silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.local/share/nvim/site/autoload/plug.vim
-    silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
-endif
-
+"
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -21,29 +14,34 @@ endif
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+if ! filereadable(expand('~/.local/share/nvim/site/autoload/plug.vim'))
+    echo "Download junegunn/vim-plug to manage plugins..."
+    silent !mkdir -p ~/.local/share/nvim/site/autoload/
+    silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.local/share/nvim/site/autoload/plug.vim
+    silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
+endif
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin('~/.config/nvim/bundle')
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-"Plug 'VundleVim/Vundle.vim'
-
+" Plug 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
+" Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
@@ -93,8 +91,8 @@ call plug#begin('~/.config/nvim/plugged')
 
    " Initialize plugin system
    " call PlugInstall to install new plugins
+   
    "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-   "Plug 'scrooloose/nerdtree'
    "Plug 'scrooloose/nerdcommenter'
    "Plug 'christoomey/vim-tmux-navigator'
    "Plug 'zchee/deoplete-jedi'
@@ -114,27 +112,27 @@ call plug#end()
 filetype plugin indent on
 syntax on set number
 set number
-set incsearch
-set ignorecase
-set smartcase
-set nohlsearch
-set tabstop=4   
-set softtabstop=0
+set cursorcolumn
 set shiftwidth=4
-set expandtab
-set nobackup
-set noswapfile
-set nowrap
-
+"set tabstop=4   
+"set incsearch
+"set ignorecase
+"set smartcase
+"set nohlsearch
+"set softtabstop=0
+"set expandtab
+"set nobackup
+"set noswapfile
+"set nowrap
 
 
 " preferences
+map <F2> :terminal<CR>
 inoremap jk <ESC>
 let mapleader = "\<Space>"
-set pastetoggle=<F2>
 " j/k will move virtual lines (lines that wrap)
-"noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-"noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 " Stay in visual mode when indenting. You will never have to run gv after
 " performing an indentation.
 vnoremap < <gv
@@ -149,18 +147,18 @@ nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 " change spacing for language specific
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+"autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
   
 " plugin settings
 
 " deoplete
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 " use tab to forward cycle
-inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+"inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " use tab to backward cycle
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>" 
+"inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>" 
 " Close the documentation window when completion is done
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+"autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Theme
 syntax enable
