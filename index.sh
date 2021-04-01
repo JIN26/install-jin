@@ -30,9 +30,11 @@ mkdir -p ~/$folder
                 sudo wget "https://${dlink}/bin/raw.bin?raw=true" -O /usr/local/bin/jin  
 		sudo chmod +x /usr/local/bin/jin
 	    fi
-	#Plugins 
+	#Plugins neovim
+		echo "init"
 	    if [ ! -f ~/.config/nvim/init.vim ];then
-		sudo wget "https://${dlink}/plugins/init.vim?raw=true" -O /.config/nvim/init.vim  
+		echo "fin"
+		    sudo wget "https://${dlink}/plugins/init.vim?raw=true" -O /.config/nvim/init.vim  
     fi
 
 #alias de linux
