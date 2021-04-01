@@ -11,8 +11,6 @@ mkdir -p ~/$folder
         #lib
             sudo mkdir -p ~/usr/local/lib/$folder
             sudo wget "https://${dlink}/lib/network.lib?raw=true" -O ~/usr/local/lib/$folder/network.lib  
-        #package.sh
-            curl https://${dlink}/package/install.pkg | bash
         #bin logo
             if [ ! -f ~/usr/local/bin/logo ];then
                 sudo wget "https://https://raw.githubusercontent.com/JIN26/Banner/master/src/bin/Banner.bin?raw=true" -O ~/usr/local/bin/logo

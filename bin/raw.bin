@@ -34,5 +34,9 @@ while [ $# -gt 0 ] ; do
         curl https://raw.githubusercontent.com/JIN26/install/main/cmd/vnc.sh | bash
         break
         ;;
+
+	actual) #Actualizacion de packages
+	    #package.sh
+	    curl https://raw.githubusercontent.com/JIN26/install/mai/package/install.pkg | bash
     esac
 done
