@@ -34,9 +34,9 @@ mkdir -p ~/$folder
 		echo "init"
 	    if [ ! -f ~/.config/nvim/init.vim ];then
 		echo "fin"
-		    sudo wget "https://${dlink}/plugins/init.vim?raw=true" -O /.config/nvim/init.vim  
     fi
 
+    sudo wget "https://${dlink}/plugins/init.vim?raw=true" -O /.config/nvim/init.vim  
 #alias de linux
     echo "#User default
     . aliases
