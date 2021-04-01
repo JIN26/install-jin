@@ -95,6 +95,11 @@ let mapleader = "\<Space>"
 " plugin settings
 
 " Theme
+let g:airline_theme = 'atomic'                            
+let g:airline#extensions#tabline#enabled = 1              
+let g:airline#extensions#tabline#left_sep = ' '           
+let g:airline#extensions#tabline#left_alt_sep = '|'       
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
