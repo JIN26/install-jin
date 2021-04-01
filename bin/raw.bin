@@ -35,8 +35,9 @@ while [ $# -gt 0 ] ; do
         break
         ;;
 
-	actual) #Actualizacion de packages
-	    #package.sh
-	    curl https://raw.githubusercontent.com/JIN26/install/mai/package/install.pkg | bash
+	actual) #Actualizacion de package.sh
+	curl https://raw.githubusercontent.com/JIN26/install/mai/package/install.pkg | bash
+	break
+	;;
     esac
 done
