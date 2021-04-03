@@ -56,6 +56,7 @@ call vundle#end()
 " basics
 filetype plugin indent on
 syntax on set number
+set number
 set cursorcolumn
 set shiftwidth=4
 
@@ -69,6 +70,7 @@ let mapleader = "\<Space>"
 
 " Theme
 let g:airline_theme = 'atomic' 
+let g:airline#extensions#branch#enabled = 1              
 let g:airline#extensions#tabline#enabled = 1              
 let g:airline#extensions#tabline#left_sep = ' '           
 let g:airline#extensions#tabline#left_alt_sep = '|'       
