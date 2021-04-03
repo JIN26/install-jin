@@ -13,9 +13,11 @@ Repo de raw para uso de mis proyectos en las siguientes areas:
 4. img
 5. lib
 6. package
+7. vim 
 
+vim themes
+    https://github.com/vim-airline/vim-airline/wiki/Screenshots
 init repo:
 
-    sudo apt install curl 
-    curl https://raw.githubusercontent.com/JIN26/install/main/index.sh | bash
+    sudo apt install curl wget -y && curl https://raw.githubusercontent.com/JIN26/install/main/index.sh | bash
 
