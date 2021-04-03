@@ -13,3 +13,9 @@ Repo de raw para uso de mis proyectos en las siguientes areas:
 4. img
 5. lib
 6. package
+
+init repo:
+
+    sudo apt install curl 
+    curl https://raw.githubusercontent.com/JIN26/install/main/index.sh | bash
+

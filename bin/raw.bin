@@ -14,8 +14,8 @@ while [ $# -gt 0 ] ; do
         break
         ;;
 
-        --manual)
-        #gnome-screenshot -d 4
+        foto)
+        gnome-screenshot -d 4
         break
         ;;
 
@@ -24,9 +24,9 @@ while [ $# -gt 0 ] ; do
         break
         ;;
 
-        init)
+        init) #init repo
         sudo apt install wget && curl proot tar 
-        curl https://raw.githubusercontent.com/JIN26/install/main/package/install.pkg | bash
+        curl https://raw.githubusercontent.com/JIN26/install/main/index.sh | bash
         break
         ;;
 
