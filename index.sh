@@ -1,12 +1,9 @@
 #!/bin/bash
 
-sudo apt install wget 
+#Jin
 dlink="raw.githubusercontent.com/JIN26/install/main"
 folder=.Jin
-
 mkdir -p ~/$folder
-
-#Jin
 echo -e "\n\tDownload package. this may take a while base on your internet speed.\n"
 
 #lib network
@@ -16,19 +13,16 @@ sudo wget "https://${dlink}/lib/network.lib?raw=true" -O /usr/local/lib/$folder/
 #lib aliases
 sudo rm /usr/local/lib/$folder/aliases.lib
 sudo wget "https://${dlink}/lib/alias.lib?raw=true" -O /usr/local/lib/$folder/aliases.lib  
-sudo chmod +x ~/usr/local/lib/$folder/aliases.lib
 
 #bin logo
 sudo rm /usr/local/bin/logo
 sudo wget "https://https://raw.githubusercontent.com/JIN26/Banner/master/src/bin/Banner.bin?raw=true" -O /usr/local/bin/logo
 sudo chmod +x /usr/local/bin/logo
-#sudo cp logo $PREFIX/bin
-#sudo cp logo $PREFIX/bin/applets
 
 #bin jin
 sudo rm /usr/local/bin/jin
 sudo wget "https://${dlink}/bin/raw.bin?raw=true" -O /usr/local/bin/jin  
-sudo chmod +x ~/usr/local/bin/jin
+sudo chmod +x /usr/local/bin/jin
 
 #Plugins neovim
 sudo rm ~/.config/nvim/init.vim
@@ -38,5 +32,3 @@ sudo wget "https://${dlink}/plugins/init.vim?raw=true" -O ~/.config/nvim/init.vi
 echo "#User default
 source /usr/local/lib/$folder/aliases.lib
 logo">~/.bash_aliases
-
-echo "skipping dowloading"
