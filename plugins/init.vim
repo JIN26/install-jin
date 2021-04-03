@@ -76,6 +76,7 @@ let mapleader = "\<Space>"
 
 " Theme https://github.com/vim-airline/vim-airline/wiki/Screenshots
 let g:airline_theme = 'atomic' 
+let g:airline#extensions#ffenc#enabled = 0              
 let g:airline#extensions#branch#enabled = 1              
 let g:airline#extensions#tabline#enabled = 1              
 let g:airline#extensions#tabline#left_sep = ' '           
