@@ -48,6 +48,9 @@ call plug#begin('~/.config/nvim/plugged')
    " Any valid git URL is allowed
    Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
+   " status of git in vim
+   Plug 'jreybert/vimagit'
+
    " On-demand loading
    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
    Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
@@ -77,6 +80,7 @@ let mapleader = "\<Space>"
 " plugin settings
 
 " Theme
+let g:airline_theme = 'atomic' 
 let g:airline_theme = 'bubblegum' 
 let g:airline#extensions#tabline#enabled = 1              
 let g:airline#extensions#tabline#left_sep = ' '           
