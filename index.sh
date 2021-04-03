@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install wget && curil proot tar 
+sudo apt install wget 
 dlink="raw.githubusercontent.com/JIN26/install/main"
 folder=.Jin
 
@@ -19,17 +19,16 @@ sudo wget "https://${dlink}/lib/alias.lib?raw=true" -O /usr/local/lib/$folder/al
 sudo chmod +x ~/usr/local/lib/$folder/aliases.lib
 
 #bin logo
-sudo mkdir -p /usr/local/bin/$folder
-sudo rm /usr/local/bin/$folder/logo
-sudo wget "https://https://raw.githubusercontent.com/JIN26/Banner/master/src/bin/Banner.bin?raw=true" -O /usr/local/bin/$folder/logo
-sudo chmod +x /usr/local/bin/$folder/logo
+sudo rm /usr/local/bin/logo
+sudo wget "https://https://raw.githubusercontent.com/JIN26/Banner/master/src/bin/Banner.bin?raw=true" -O /usr/local/bin/logo
+sudo chmod +x /usr/local/bin/logo
 #sudo cp logo $PREFIX/bin
 #sudo cp logo $PREFIX/bin/applets
 
 #bin jin
-sudo rm /usr/local/bin/$folder/jin
-sudo wget "https://${dlink}/bin/raw.bin?raw=true" -O /usr/local/bin/$folder/jin  
-sudo chmod +x ~/usr/local/bin/$folder/jin
+sudo rm /usr/local/bin/jin
+sudo wget "https://${dlink}/bin/raw.bin?raw=true" -O /usr/local/bin/jin  
+sudo chmod +x ~/usr/local/bin/jin
 
 #Plugins neovim
 sudo rm ~/.config/nvim/init.vim
@@ -37,7 +36,7 @@ sudo wget "https://${dlink}/plugins/init.vim?raw=true" -O ~/.config/nvim/init.vi
 
 #alias de linux
 echo "#User default
-sources ~/usr/local/lib/$folder/aliases.lib
+source /usr/local/lib/$folder/aliases.lib
 logo">~/.bash_aliases
 
 echo "skipping dowloading"
