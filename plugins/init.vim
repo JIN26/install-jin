@@ -24,6 +24,9 @@ call vundle#begin('~/.config/nvim/bundle')
 " Alternatively, pass a path where Vundle should install plugins
 " All of your Plugins must be added before the following line
 
+" Initialize plugin system
+" call PlugInstall to install new plugins
+
     " let Vundle manage Vundle, required
     Plugin 'VundleVim/Vundle.vim'
 
@@ -39,17 +42,20 @@ call vundle#begin('~/.config/nvim/bundle')
 
     " status of git in vim
     Plugin 'jreybert/vimagit'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'airblade/vim-gitgutter'
 
     " On-demand loading
     Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
     Plugin 'tpope/vim-fireplace', { 'for': 'clojure' }
 
-    " Initialize plugin system
-    " call PlugInstall to install new plugins
 
     "Barra de ayuda de nvim y temas
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
+    
+    " coc autocomplete
+    Plugin 'neoclide/coc.nvim', {'branch': 'release' }
 
 call vundle#end()     
 
@@ -68,7 +74,7 @@ let mapleader = "\<Space>"
 
 " plugin settings
 
-" Theme
+" Theme https://github.com/vim-airline/vim-airline/wiki/Screenshots
 let g:airline_theme = 'atomic' 
 let g:airline#extensions#branch#enabled = 1              
 let g:airline#extensions#tabline#enabled = 1              
