@@ -4,8 +4,10 @@
     case $net in
         0)
             #Actualizacion
-                sudo apt update && sudo apt upgrade
-                echo -e "\n Actualizado \n"
+		mkdir -p ~/.Jin 
+		sudo apt update && sudo apt upgrade
+                sudo apt curl && wget
+		echo -e "\n Actualizado \n"
             #git
                 if [ -z $(command -v git) ]; then
                     sudo apt install git
@@ -18,20 +20,6 @@
                 if [ -z $(command -v nvim) ]; then
                     sudo apt-get install neovim;
                 fi
-            #configuration of plugins
-                #git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vumdle.vim
-
-                #echo 'set rtp+=~/.vim/bundle/Vundle.vim
-                #call vundle#begin()
-                #let g:clang_c_options = '-std=gnu11'
-                #Plugin 'VundleVim/Vundle.vim'
-
-                #" (*) Aqui agregamos las líneas <Plugin> para incorporar nuevos plugins a Vim
-
-                #call vundle#end() " required
-                #filetype plugin indent on " required'>>~/.vim/plugins.vim;
-
-                #echo 'so ~/.vim/plugins.vim'>>~/.vimrc/plugins.vim;
             #LLAVE ssh
                 if [ -z $(command -v ssh) ]; then
                     ssh llave install.
@@ -53,9 +41,7 @@
                         #My configuration termux
                             sleep 2;
                         #storage
-                            if [ -d ~/storage ]; then
-                                cd
-                            else
+                            if [ ! -d ~/storage ]; then
                                 cd
                                 termux-setup-storage
                             fi
@@ -103,8 +89,7 @@
                                 #kali system init
                                 echo '#!/bin/bash
                                 cd ~/.Jin
-                                ./phone.sh &;
-                                ./vnc.sh &
+                                ./server-php.sh &
                                 cd kali;
                                 ./start-kali.sh
                                 exit'>~/kali.sh;
@@ -136,10 +121,11 @@
                                 service apache2 reload
                                 #netstat -tuna
                             fi
-                        #nodejs,npm y react-native con expo
+                        #nodejs
                             if [ -z $(command -v nodejs) ]; then
                                 sudo apt-get install -y nodejs
                             fi
+			#npm 
                             if [ -z $(command -v npm) ]; then
                                 sudo apt install npm
                             fi
@@ -147,10 +133,12 @@
                                 sudo npm install -g n
                                 sudo n estable
                             fi
+			#react-native 
                             if [ -z $(command -v react-native) ]; then
                                 sudo npm install -g react-native-cli
                                 sudo npm install -g react-native-app
                             fi
+			#expo
                             if [ -z $(command -v expo-cli) ]; then
                                 sudo npm install expo-cli --global
                             fi
