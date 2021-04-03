@@ -1,8 +1,7 @@
-" Author: @theniceboy:
-
-" # Neovim (~ / .local / share / nvim / site / autoload) 
-" curl -fLo ~ /.local/share/nvim/site/autoload/plug.vim --create-dirs \
-"     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" Author: @JIN26:
+"
+" # Neovim (~ / .config / nvim / bundle / Vundle.vim) 
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 "
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
@@ -16,58 +15,47 @@
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-if ! filereadable(expand('~/.local/share/nvim/site/autoload/plug.vim'))
-    echo "Download junegunn/vim-plug to manage plugins..."
-    silent !mkdir -p ~/.local/share/nvim/site/autoload/
-    silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.local/share/nvim/site/autoload/plug.vim
-    silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
-endif
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.config/nvim/bundle/Vundle.vim
+
 call vundle#begin('~/.config/nvim/bundle')
-" alternatively, pass a path where Vundle should install plugins
-  
+" Alternatively, pass a path where Vundle should install plugins
 " All of your Plugins must be added before the following line
+
+    " let Vundle manage Vundle, required
+    Plugin 'VundleVim/Vundle.vim'
+
+    " mover
+    " <A-k>   Move current line/selection up
+    " <A-j>   Move curnret line/selection down
+    " <A-h>   Move current character/selection left
+    " <A-l>   Move current character/selection right
+    Plugin 'matze/vim-move'
   
-"mover
-"<A-k>   Move current line/selection up
-"<A-j>   Move curnret line/selection down
-"<A-h>   Move current character/selection left
-"<A-l>   Move current character/selection right
-Plugin 'matze/vim-move'
-  
+    " Any valid git URL is allowed
+    Plugin 'https://github.com/junegunn/vim-github-dashboard.git'
+
+    " status of git in vim
+    Plugin 'jreybert/vimagit'
+
+    " On-demand loading
+    Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    Plugin 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+    " Initialize plugin system
+    " call PlugInstall to install new plugins
+
+    "Barra de ayuda de nvim y temas
+    Plugin 'vim-airline/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
+
 call vundle#end()     
-
-call plug#begin('~/.config/nvim/plugged')
-
-   " Make sure you use single quotes
-
-   " Any valid git URL is allowed
-   Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
-   " status of git in vim
-   Plug 'jreybert/vimagit'
-
-   " On-demand loading
-   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-   Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
-   " Initialize plugin system
-   " call PlugInstall to install new plugins
-   
-   "Barra de ayuda de nvim y temas
-   Plug 'vim-airline/vim-airline'
-   Plug 'vim-airline/vim-airline-themes'
-   
-call plug#end()
 
 " basics
 filetype plugin indent on
 syntax on set number
-set number
 set cursorcolumn
 set shiftwidth=4
 
@@ -81,7 +69,6 @@ let mapleader = "\<Space>"
 
 " Theme
 let g:airline_theme = 'atomic' 
-let g:airline_theme = 'bubblegum' 
 let g:airline#extensions#tabline#enabled = 1              
 let g:airline#extensions#tabline#left_sep = ' '           
 let g:airline#extensions#tabline#left_alt_sep = '|'       
@@ -90,7 +77,6 @@ syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 set background=dark
-" colorscheme nova
   
 " NERDTree
 " How can I close vim if the only window left open is a NERDTree?
