@@ -34,9 +34,12 @@ while [ $# -gt 0 ] ; do
         break
         ;;
 
-	actual) #Actualizacion de package.sh
-	curl https://raw.githubusercontent.com/JIN26/install/main/package/install.pkg | bash
-	break
-	;;
+        actual) #Actualizacion de package.sh
+        curl https://raw.githubusercontent.com/JIN26/install/main/package/install.pkg | bash
+        break
+        ;;  
+
+        banner)
+        git clone https://github.com/JIN26/Banner.git
     esac
 done
