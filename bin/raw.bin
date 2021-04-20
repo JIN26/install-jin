@@ -33,7 +33,14 @@ while [ $# -gt 0 ] ; do
         curl https://raw.githubusercontent.com/JIN26/install/main/cmd/server-php.sh | bash
         break
         ;;
-
+	
+	server-npm) #servidor nmp 
+	sudo npm i -g serve
+	serve -l 8080
+	google-chrome "8080"
+	break
+	;;
+	
         actual) #Actualizacion de package.sh
         curl https://raw.githubusercontent.com/JIN26/install/main/package/install.pkg | bash
         break
@@ -41,5 +48,7 @@ while [ $# -gt 0 ] ; do
 
         banner)
         git clone https://github.com/JIN26/Banner.git
+	break
+	;;
     esac
 done
