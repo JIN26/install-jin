@@ -36,8 +36,13 @@ while [ $# -gt 0 ] ; do
 	
 	server-npm) #servidor nmp 
 	sudo npm i -g serve
+<<<<<<< HEAD
 	google-chrome "8080"
 	serve -l 8080
+=======
+	serve -l 8080
+	google-chrome "8080"
+>>>>>>> d1ee98145bc58b05f77498d052e44a8461b82276
 	break
 	;;
 	
