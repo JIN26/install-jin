@@ -10,19 +10,22 @@ mkdir -p ~/$folder
 sudo mkdir -p /usr/local/lib/$folder
 sudo rm /usr/local/lib/$folder/network.lib
 sudo wget "https://${dlink}/lib/network.lib?raw=true" -O /usr/local/lib/$folder/network.lib 
+sudo chmod +xr /usr/local/lib/$folder/network.lib
 
 #lib aliases
 sudo rm /usr/local/lib/$folder/aliases.lib
 sudo wget "https://${dlink}/lib/alias.lib?raw=true" -O /usr/local/lib/$folder/aliases.lib  
+sudo chmod +xr /usr/local/lib/$folder/aliases.lib
 
 #lib autor
 sudo rm /usr/local/lib/$folder/autor.lib
 sudo wget "https://${dlink}/lib/autor.lib?raw=true" -O /usr/local/lib/$folder/autor.lib  
+sudo chmod +xr /usr/local/lib/$folder/autor.lib
 
 #bin logo
 sudo rm /usr/local/bin/logo
 sudo wget "https://raw.githubusercontent.com/JIN26/Banner/master/src/bin/Banner.bin?raw=true" -O /usr/local/bin/logo
-sudo chmod +x /usr/local/bin/logo
+sudo chmod +xr /usr/local/bin/logo
 
 #bin jin
 sudo rm /usr/local/bin/jin
