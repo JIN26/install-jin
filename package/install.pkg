@@ -5,21 +5,21 @@
         0)
             #Actualizacion
 		mkdir -p ~/.Jin 
-		sudo apt update && sudo apt upgrade
-                sudo apt install curl -y
-		sudo apt install wget -y 
+		apt update && sudo apt upgrade
+                apt install curl -y
+		apt install wget -y 
 		echo -e "\n Actualizado \n"
             #git
                 if [ -z $(command -v git) ]; then
-                    sudo apt install git
+                    apt install git
                 fi
             #Install vim
                 if [ -z $(command -v vim) ]; then
-                    sudo apt install vim;
+                    apt install vim;
                 fi
             #Install neovim
                 if [ -z $(command -v nvim) ]; then
-                    sudo apt-get install neovim;
+                    apt-get install neovim;
                 fi
             #LLAVE ssh
                 if [ -z $(command -v ssh) ]; then
@@ -30,7 +30,7 @@
                 fi
             #Install figlet
                 if [ -z $(command -v figlet) ]; then
-                    sudo apt install figlet
+                    apt install figlet
                 fi
             #System type
                 case "$OSTYPE" in
@@ -48,7 +48,7 @@
                             fi
                         #install tree
                             if [ -z $(command -v tree) ]; then
-                                sudo snap install tree
+                                snap install tree
                             fi
                         #github CLi
                             if [ -z $(command -v gh) ]; then

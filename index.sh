@@ -7,34 +7,34 @@ folder=.Jin
 mkdir -p ~/$folder
 
 #lib network
-sudo mkdir -p /usr/local/lib/$folder
-sudo rm /usr/local/lib/$folder/network.lib
-sudo wget "https://${dlink}/lib/network.lib?raw=true" -O /usr/local/lib/$folder/network.lib 
-sudo chmod +xr /usr/local/lib/$folder/network.lib
+mkdir -p /usr/local/lib/$folder
+rm /usr/local/lib/$folder/network.lib
+wget "https://${dlink}/lib/network.lib?raw=true" -O /usr/local/lib/$folder/network.lib 
+chmod +xr /usr/local/lib/$folder/network.lib
 
 #lib aliases
-sudo rm /usr/local/lib/$folder/aliases.lib
-sudo wget "https://${dlink}/lib/alias.lib?raw=true" -O /usr/local/lib/$folder/aliases.lib  
-sudo chmod +xr /usr/local/lib/$folder/aliases.lib
+rm /usr/local/lib/$folder/aliases.lib
+wget "https://${dlink}/lib/alias.lib?raw=true" -O /usr/local/lib/$folder/aliases.lib  
+chmod +xr /usr/local/lib/$folder/aliases.lib
 
 #lib autor
-sudo rm /usr/local/lib/$folder/autor.lib
-sudo wget "https://${dlink}/lib/autor.lib?raw=true" -O /usr/local/lib/$folder/autor.lib  
-sudo chmod +xr /usr/local/lib/$folder/autor.lib
+rm /usr/local/lib/$folder/autor.lib
+wget "https://${dlink}/lib/autor.lib?raw=true" -O /usr/local/lib/$folder/autor.lib  
+chmod +xr /usr/local/lib/$folder/autor.lib
 
 #bin logo
-sudo rm /usr/local/bin/logo
-sudo wget "https://raw.githubusercontent.com/JIN26/Banner/master/src/bin/Banner.bin?raw=true" -O /usr/local/bin/logo
-sudo chmod +xr /usr/local/bin/logo
+rm /usr/local/bin/logo
+wget "https://raw.githubusercontent.com/JIN26/Banner/master/src/bin/Banner.bin?raw=true" -O /usr/local/bin/logo
+chmod +xr /usr/local/bin/logo
 
 #bin jin
-sudo rm /usr/local/bin/jin
-sudo wget "https://${dlink}/bin/raw.bin?raw=true" -O /usr/local/bin/jin  
-sudo chmod +x /usr/local/bin/jin
+rm /usr/local/bin/jin
+wget "https://${dlink}/bin/raw.bin?raw=true" -O /usr/local/bin/jin  
+chmod +x /usr/local/bin/jin
 
 #Plugins neovim
-sudo rm ~/.config/nvim/init.vim
-sudo wget "https://${dlink}/plugins/init.vim?raw=true" -O ~/.config/nvim/init.vim  
+rm ~/.config/nvim/init.vim
+wget "https://${dlink}/plugins/init.vim?raw=true" -O ~/.config/nvim/init.vim  
 
 sleep 0.5
 #Rescribir el banner dependiendo del sistema
