@@ -27,6 +27,7 @@ echo -e "\n\tDownload package. this may take a while base on your internet speed
     esac
 
 function ctrl_c() {
+    
     printf "        $R [W] You will exit $W \n"
     printf "$Y [!]$W Everything will be restored \n\n"
     sleep 1
@@ -72,37 +73,40 @@ function ctrl_c() {
               
 sleep 0.5
 
-#Rescribir el banner dependiendo del sistema
-
-case "$OSTYPE" in
-  linux-androideabi)
+function main{
     
     #.Jin
 	mkdir -p /${usr}/lib/$folder 
-    
+
     #netword.lib
 	wget "https://${dlink}/lib/network.lib?raw=true" -O ${usr}/lib/$folder/network.lib 
 	chmod +xr ${usr}/lib/$folder/network.lib
-    
+
     #aliases.lib
 	wget "https://${dlink}/lib/alias.lib?raw=true" -O ${usr}/lib/$folder/aliases.lib  
 	chmod +xr ${usr}/lib/$folder/aliases.lib
-    
+
     #autor.lib
 	wget "https://${dlink}/lib/autor.lib?raw=true" -O ${usr}/lib/$folder/autor.lib  
 	chmod +xr ${usr}/lib/$folder/autor.lib
-    
+
     #bin logo
 	wget "https://raw.githubusercontent.com/JIN26/Banner/master/src/bin/Banner.bin?raw=true" -O ${usr}/bin/logo
 	chmod +xr ${usr}/bin/logo
-    
+
     #bin jin
 	wget "https://${dlink}/bin/raw.bin?raw=true" -O ${usr}/bin/jin  
 	chmod +x ${usr}/bin/jin
 
     #Plugins neovim
 	wget "https://${dlink}/plugins/init.vim?raw=true" -O ~/.config/nvim/init.vim  
+}
 
+#Rescribir el banner dependiendo del sistema
+
+case "$OSTYPE" in
+  linux-androideabi)
+    
     if [ -e $PREFIX/etc/motd ]; then
       rm $PREFIX/etc/motd
     fi
