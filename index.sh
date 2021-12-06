@@ -8,7 +8,6 @@ echo -e "\n\tDownload package. this may take a while base on your internet speed
 	rm -r ~/$folder 
     fi
     mkdir -p ~/$folder
-    mkdir -p /${usr}/lib/$folder 
 
 #
 #			LET'S TO START
@@ -75,6 +74,9 @@ function ctrl_c() {
 sleep 0.5
 
 function main{
+    
+    #.Jin
+    mkdir -p /${usr}/lib/$folder 
 
     #netword.lib
 	wget "https://${dlink}/lib/network.lib?raw=true" -O ${usr}/lib/$folder/network.lib 
