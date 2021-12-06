@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 echo -e "\n\tDownload package. this may take a while base on your internet speed.\n"
 
