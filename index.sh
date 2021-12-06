@@ -4,7 +4,7 @@ echo -e "\n\tDownload package. this may take a while base on your internet speed
 
 #.Jin	
     folder=.Jin
-    if [ -e ~/$folder ]; then                      rm -r ~/$folder                             
+    if [ -e ~/$folder ]; then                             
 	rm -r ~/$folder 
     fi
     mkdir -p ~/$folder
