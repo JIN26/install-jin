@@ -3,7 +3,9 @@
 echo -e "\n\tDownload package. this may take a while base on your internet speed.\n"
 
 #.Jin	
+    dlink="raw.githubusercontent.com/JIN26/install/main"
     folder=.Jin
+    
     if [ -e ~/$folder ]; then                             
 	rm -r ~/$folder 
     fi
@@ -17,16 +19,14 @@ echo -e "\n\tDownload package. this may take a while base on your internet speed
 
     case "$OSTYPE" in
 	linux-androideabi)
-	    dlink="raw.githubusercontent.com/JIN26/install/termux"
 	    usr="$PREFIX" 
 	;;
 	linux-gnu)
-	    dlink="raw.githubusercontent.com/JIN26/install/main"
             usr="/usr/local"			
 	;;
     esac
 
-function ctrl_c() {
+#main
     
     printf "        $R [W] You will exit $W \n"
     printf "$Y [!]$W Everything will be restored \n\n"
@@ -66,14 +66,51 @@ function ctrl_c() {
     if [ -e ~/.config/nvim/init.vim ]; then
 	rm ~/.config/nvim/init.vim
     fi
-    
+        
     echo $(clear)
-    echo $(exit)
-}
-              
-sleep 0.5
 
-function main{
+# fin main
+
+#Rescribir el banner dependiendo del sistema
+
+case "$OSTYPE" in
+  linux-androideabi)
+    
+    if [ -e $PREFIX/etc/motd ]; then
+      rm $PREFIX/etc/motd
+    fi
+    if [ -e $PREFIX/etc/bash.bashrc ]; then
+      echo "
+      if [ -x /data/data/com.termux/files/usr/libexec/termux/command-not-found ]; then
+        command_not_found_handle() {
+          /data/data/com.termux/files/usr/libexec/termux/command-not-found "$1"
+        }
+      fi
+
+      PS1='Jin$ '
+
+      #User default
+      source ${usr}/lib/$folder/aliases.lib
+      logo">$PREFIX/etc/bash.bashrc
+    fi
+    
+    ;;
+    linux-gnu)
+    
+    #alias de linux
+    
+    echo "#User default
+    source ${usr}/lib/$folder/aliases.lib
+    logo">~/.bash_aliases
+    
+    #echo "# Alias definitions.
+    # You may want to put all your additions into a separate file like
+    # ~/.bash_aliases, instead of adding them here directly.
+    # See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+    #if [ -f ~/.bash_aliases ]; then
+    #  . ~/.bash_aliases
+    #fi">>~/.bashrc
     
     #.Jin
     mkdir -p /${usr}/lib/$folder 
@@ -100,47 +137,8 @@ function main{
 
     #Plugins neovim
 	wget "https://${dlink}/plugins/init.vim?raw=true" -O ~/.config/nvim/init.vim  
-}
+	
+    echo $(exit)
 
-#Rescribir el banner dependiendo del sistema
-
-case "$OSTYPE" in
-  linux-androideabi)
-    
-    if [ -e $PREFIX/etc/motd ]; then
-      rm $PREFIX/etc/motd
-    fi
-    if [ -e $PREFIX/etc/bash.bashrc ]; then
-      echo "
-      if [ -x /data/data/com.termux/files/usr/libexec/termux/command-not-found ]; then
-        command_not_found_handle() {
-          /data/data/com.termux/files/usr/libexec/termux/command-not-found "$1"
-        }
-      fi
-
-      PS1='Jin$ '
-
-      #User default
-      source ${usr}/lib/$folder/aliases.lib
-      logo">$PREFIX/etc/bash.bashrc
-    fi
-    ;;
-    linux-gnu)
-    
-    #alias de linux
-    
-    echo "#User default
-    source ${usr}/lib/$folder/aliases.lib
-    logo">~/.bash_aliases
-    
-    #echo "# Alias definitions.
-    # You may want to put all your additions into a separate file like
-    # ~/.bash_aliases, instead of adding them here directly.
-    # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-    #if [ -f ~/.bash_aliases ]; then
-    #  . ~/.bash_aliases
-    #fi">>~/.bashrc
-    
     ;;
 esac
