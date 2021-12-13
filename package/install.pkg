@@ -27,7 +27,7 @@
                     echo -e "\n Actualizado \n"
                 #git
                     if [ -z $(command -v git) ]; then
-                        apt install git
+                        apt install git 
                     fi
                 #Install neovim
                     if [ -z $(command -v nvim) ]; then
@@ -85,16 +85,6 @@
                     fi
                 #OS kali
                     if [ -e ~/.Jin/kali/ ]; then
-                    #kali system init
-                        echo '#!/bin/bash
-                            cd ~/.Jin
-                            ./phone.sh &;
-                            ./vnc.sh &
-                            cd kali;
-                            ./start-kali.sh
-                            exit'>~/kali.sh;
-                            chmod +x kali.sh;
-                    else
                         pkg update -y && pkg install curl proot tar -y && curl https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Installer/Kali/kali-xfce.sh | bashh
                     #kali system init
                         echo '#!/bin/bash
@@ -104,6 +94,16 @@
                             ./start-kali.sh
                             exit'>~/kali.sh;
                         chmod +x kali.sh;
+                    else
+                    #kali system init
+                        echo '#!/bin/bash
+                            cd ~/.Jin
+                            ./phone.sh &;
+                            ./vnc.sh &
+                            cd kali;
+                            ./start-kali.sh
+                            exit'>~/kali.sh;
+                            chmod +x kali.sh;
                     fi
                 ;;
                 linux-gnu)
