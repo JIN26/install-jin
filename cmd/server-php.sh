@@ -1,9 +1,12 @@
 #!/bin/bash
 
-source /usr/local/lib/.Jin/network.lib
-echo
+#
+#			LET'S TO START Server-php
+#
 case "$OSTYPE" in
     linux-androideabi) #phone
+        source $PREFIX/lib/.Jin/network.lib
+        echo
         setterm -foreground green;
         figlet -cf slant "$ipp" ||cowsay sorry
         figlet -cf slant "$ip:8081" ||cowsay sorry
@@ -12,7 +15,9 @@ case "$OSTYPE" in
         php -S "$ip:8081" -t  ~/storage/shared/Download/ &
         php -S "$ipp" -t $PWD/ &
         ;;
-    linux-gnu*) #laptop and phone internal kali
+    linux-gnu*) #laptop and phone internal kali			
+        source /usr/local/lib/.Jin/network.lib
+        echo
         setterm -foreground green;
         figlet -cf slant "$ipp" ||cowsay sorry
         echo "$PWD"

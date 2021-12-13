@@ -84,7 +84,7 @@
                         apt install openssh;
                     fi
                 #OS kali
-                    if [ -d ~/.Jin/kali/ ]; then
+                    if [ -e ~/.Jin/kali/ ]; then
                     #kali system init
                         echo '#!/bin/bash
                             cd ~/.Jin

@@ -11,14 +11,14 @@ while [ $# -gt 0 ] ; do
         --help)
         #usage
         echo -e "ayuda!! \n En proceso todavia"
-	echo "jin foto = screenshot;"
-	echo "jin --version = modelo de version;"
-	echo "jin init = instalacion de librerias;"
-	echo "jin server-php = servido	php;"
-	echo "jin server-npm = server npm;"
-	echo "jin actual = actualizacion de packetes;"
-	echo "jin banner = programa de banner;"
-	break
+	    echo "jin foto = screenshot;"
+	    echo "jin --version = modelo de version;"
+	    echo "jin init = instalacion de librerias;"
+	    echo "jin server-php = servido	php;"
+	    echo "jin server-npm = server npm;"
+	    echo "jin actual = actualizacion de packetes;"
+	    echo "jin banner = programa de banner;"
+	    break
         ;;
 
         foto)
