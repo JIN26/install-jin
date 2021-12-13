@@ -22,7 +22,7 @@ echo -e "\n\tDownload package. this may take a while base on your internet speed
 	    usr="$PREFIX" 
 	;;
 	linux-gnu)
-            usr="/usr/local"			
+        usr="/usr/local"			
 	;;
     esac
 
