@@ -94,24 +94,6 @@ case "$OSTYPE" in
       logo">$PREFIX/etc/bash.bashrc
     fi
     
-    ;;
-    linux-gnu)
-    
-    #alias de linux
-    
-    echo "#User default
-    source ${usr}/lib/$folder/aliases.lib
-    logo">~/.bash_aliases
-    
-    #echo "# Alias definitions.
-    # You may want to put all your additions into a separate file like
-    # ~/.bash_aliases, instead of adding them here directly.
-    # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-    #if [ -f ~/.bash_aliases ]; then
-    #  . ~/.bash_aliases
-    #fi">>~/.bashrc
-    
     #.Jin
     mkdir -p /${usr}/lib/$folder 
 
@@ -137,6 +119,52 @@ case "$OSTYPE" in
 
     #Plugins neovim
 	wget "https://${dlink}/plugins/init.vim?raw=true" -O ~/.config/nvim/init.vim  
+	
+    echo $(exit)
+
+    ;;
+    linux-gnu)
+    
+    #alias de linux
+    
+    echo "#User default
+    source ${usr}/lib/$folder/aliases.lib
+    logo">~/.bash_aliases
+    
+    #echo "# Alias definitions.
+    # You may want to put all your additions into a separate file like
+    # ~/.bash_aliases, instead of adding them here directly.
+    # See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+    #if [ -f ~/.bash_aliases ]; then
+    #  . ~/.bash_aliases
+    #fi">>~/.bashrc
+    
+    #.Jin
+    sudo mkdir -p /${usr}/lib/$folder 
+
+    #netword.lib
+	sudo wget "https://${dlink}/lib/network.lib?raw=true" -O ${usr}/lib/$folder/network.lib 
+	sudo chmod +xr ${usr}/lib/$folder/network.lib
+
+    #aliases.lib
+	sudo wget "https://${dlink}/lib/alias.lib?raw=true" -O ${usr}/lib/$folder/aliases.lib  
+	sudo chmod +xr ${usr}/lib/$folder/aliases.lib
+
+    #autor.lib
+	sudo wget "https://${dlink}/lib/autor.lib?raw=true" -O ${usr}/lib/$folder/autor.lib  
+	sudo chmod +xr ${usr}/lib/$folder/autor.lib
+
+    #bin logo
+	sudo wget "https://raw.githubusercontent.com/JIN26/Banner/master/src/bin/Banner.bin?raw=true" -O ${usr}/bin/logo
+	sudo chmod +xr ${usr}/bin/logo
+
+    #bin jin
+	sudo wget "https://${dlink}/bin/raw.bin?raw=true" -O ${usr}/bin/jin  
+	sudo chmod +x ${usr}/bin/jin
+
+    #Plugins neovim
+	sudo wget "https://${dlink}/plugins/init.vim?raw=true" -O ~/.config/nvim/init.vim  
 	
     echo $(exit)
 
