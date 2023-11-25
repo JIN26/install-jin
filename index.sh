@@ -25,7 +25,7 @@ echo -e "\n\tDownload package. this may take a while base on your internet speed
         usr="/usr/local"			
 	;;
     esac
-echo $(usr)
+echo usr
 #main
     
     printf "        $R [W] You will exit $W \n"
