@@ -1,0 +1,22 @@
+{
+  "name": "install-jin",
+  "version": "1.0.0",
+  "description": "adaptacion de sistema",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JIN26/install-jin.git"
+  },
+  "author": "Angel Mantilla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JIN26/install/issues"
+  },
+  "homepage": "https://github.com/JIN26/install#readme"
+}
