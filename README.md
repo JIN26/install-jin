@@ -21,3 +21,4 @@ init repo:
 
     sudo apt install curl wget -y && curl https://raw.githubusercontent.com/JIN26/install/main/index.sh | bash
 
+se subio a npm una funcion de string aleatorio

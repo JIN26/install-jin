@@ -13,10 +13,18 @@
     "type": "git",
     "url": "git+https://github.com/JIN26/install-jin.git"
   },
-  "author": "Angel Mantilla",
+  "author": "Angel Mantilla <angelmantilla26@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JIN26/install/issues"
   },
-  "homepage": "https://github.com/JIN26/install#readme"
+  "homepage": "https://github.com/JIN26/install#readme",
+  "bin": {
+    "install-jin": "bin/global.js"
+  },
+  "preferGlobal": true,
+  "keywords": [],
+  "dependencies": {
+    "g": "^2.0.1"
+  }
 }
