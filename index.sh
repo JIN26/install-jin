@@ -66,8 +66,6 @@ echo -e "\n\tDownload package. this may take a while base on your internet speed
     if [ -e ~/.config/nvim/init.vim ]; then
 	rm ~/.config/nvim/init.vim
     fi
-        
-    echo $(clear)
 
 # fin main
 
@@ -75,7 +73,7 @@ echo -e "\n\tDownload package. this may take a while base on your internet speed
 
 case "$OSTYPE" in
   linux-android)
-    
+    echo hola
     if [ -e $PREFIX/etc/motd ]; then
       rm $PREFIX/etc/motd
     fi
