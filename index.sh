@@ -3,7 +3,7 @@
 echo -e "\n\tDownload package. this may take a while base on your internet speed.\n"
 
 #.Jin	
-    dlink="raw.githubusercontent.com/JIN26/install/main"
+    dlink="raw.githubusercontent.com/JIN26/install-jin/main"
     folder=.Jin
     
     if [ -e ~/$folder ]; then                             
