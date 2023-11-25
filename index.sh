@@ -16,7 +16,7 @@ echo -e "\n\tDownload package. this may take a while base on your internet speed
 #
 
 #Cleaning up
-
+usr="$PREFIX" 
     case "$OSTYPE" in
 	linux-android)
 	    usr="$PREFIX" 
