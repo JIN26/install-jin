@@ -74,7 +74,7 @@ echo -e "\n\tDownload package. this may take a while base on your internet speed
 #Rescribir el banner dependiendo del sistema
 
 case "$OSTYPE" in
-  linux-androideabi)
+  linux-android)
     
     if [ -e $PREFIX/etc/motd ]; then
       rm $PREFIX/etc/motd
